@@ -208,8 +208,8 @@ def output_ws(un, pw, ben, custom=False, new_fold=None):
 
 
 def db_pull(un, pw, select):
-    cs = '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = cfdbprd01.psb.bls.gov)(PORT = 1521))    (CONNECT_DATA =      (SERVER = DEDICATED) (SERVICE_NAME = ocwcprd.psb.bls.gov)))'
-    # cs stands for connection string. This is specific to the ocwcprd oracle database, but should be the same for all users that have access. 
+    cs = 'Connection string"
+    # cs stands for connection string. 
     pull=[]
     with oracledb.connect(user=un, password=pw, dsn=cs) as connection:
         with connection.cursor() as cursor:
@@ -959,3 +959,4 @@ def get_all_ben(un, pw, t_benefit):
 
 
 ###############################################
+
